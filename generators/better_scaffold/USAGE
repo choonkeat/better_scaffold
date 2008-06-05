@@ -29,9 +29,9 @@ Examples:
     ./script/generate better_scaffold purchase order_id:integer created_at:datetime amount:decimal
 
 Note:
-    ./script/generate better_scaffold users/purchase order_id:integer created_at:datetime amount:decimal
+    ./script/generate better_scaffold orders/purchase order_id:integer created_at:datetime amount:decimal
     gives you regular scaffold for "Purchase" 
-       + correctly prefixed named_routes
+       + correctly prefixed named_routes, e.g. order_purchase_url(params[:order_id], @purchase)
     on top of
        + paginated 'index' action
        + _form and _summary partials (with css classes set)
