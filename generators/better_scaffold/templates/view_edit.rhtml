@@ -2,7 +2,7 @@
 
 <%%= error_messages_for :<%= singular_name %> %>
 
-<%% form_for(:<%= singular_name %>, :url => <%= route_prefix + singular_name %>_path(<%= param_prefix %>@<%= singular_name %>), :html => { :method => :put }) do |f| %>
+<%% form_for(:<%= singular_name %>, @<%= singular_name %>, :url => <%= route_prefix + singular_name %>_path(<%= param_prefix %>@<%= singular_name %>), :html => { :method => :put }) do |f| %>
   <%%= render :partial => '/<%= plural_name %>/form', :locals => { :f => f }, :object => f %>
   <p>
     <%%= submit_tag "Update" %>
