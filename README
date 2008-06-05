@@ -1,0 +1,8 @@
+BetterScaffold
+==============
+
+A modified CRUD generator for Rails, more for solving my own needs of
+  * generating nested resource with proper routes, e.g. "users/purchase" will generate "user_purchase_path"
+  * using will_paginate in "index" action
+  * using web_sg_form_builder for more consistent, semantically marked up forms (and creating those "_form" partials)
+  
