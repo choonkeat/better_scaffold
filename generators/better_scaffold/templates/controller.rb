@@ -3,7 +3,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   # GET /<%= table_name %>.xml
   def index
     @<%= table_name %> = <%= class_name %>.paginate :page => params[:page], :order => 'created_at DESC',
-      :conditions => <%= controller_prefix.empty? ? "1=1" : "{" + controller_prefix.collect {|x| ":#{x.singularize}_id => params[:#{x.singularize}_id]"}.join(', ') + "}" %>
+      :conditions => <%= controller_prefix.empty? ? '"1=1"' : "{" + controller_prefix.collect {|x| ":#{x.singularize}_id => params[:#{x.singularize}_id]"}.join(', ') + "}" %>
 
     respond_to do |format|
       format.html # index.rhtml
