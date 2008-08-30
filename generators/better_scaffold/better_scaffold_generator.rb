@@ -88,7 +88,7 @@ class BetterScaffoldGenerator < Rails::Generator::NamedBase
       end
 
       route_string = ":#{controller_file_name}" + 
-        "#{@controller_prefix.empty? ? '' : ', :path_prefix => "' + (@controller_prefix.collect {|x| "/#{x.pluralize}/:#{x.singularize}_id"}.join('/')) + '"'}" +
+        "#{@controller_prefix.empty? ? '' : ', :path_prefix => "' + (@controller_prefix.collect {|x| "#{x.pluralize}/:#{x.singularize}_id"}.join('/')) + '"'}" +
         "#{@controller_prefix.empty? ? '' : ', :name_prefix => "' + (@controller_prefix.collect {|x| x.singularize}.join('_')) + '_"'}"
       def route_string.to_sym; to_s; end
       def route_string.inspect; to_s; end
